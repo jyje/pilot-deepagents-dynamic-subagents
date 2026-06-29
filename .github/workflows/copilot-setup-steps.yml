@@ -10,7 +10,6 @@ on:
       - requirements*.txt
       - package.json
       - package-lock.json
-      - README.md
   pull_request:
     paths:
       - .github/workflows/copilot-setup-steps.yml
@@ -19,7 +18,6 @@ on:
       - requirements*.txt
       - package.json
       - package-lock.json
-      - README.md
 
 jobs:
   copilot-setup-steps:

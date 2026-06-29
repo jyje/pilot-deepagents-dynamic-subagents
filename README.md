@@ -43,15 +43,7 @@ Current baseline setup:
 1. Checkout repository source.
 2. Verify baseline toolchain availability (`git`, `python3`).
 
-## Formatting and Reference Alignment
-
-This README formatting intentionally follows the style direction used in the user's related pilot repositories, including:
-
-- centered project header layout
-- image-first presentation style
-- concise top summary section
-
-Reference projects:
+## Reference Projects
 
 - [`jyje/pilot-deep-agents`](https://github.com/jyje/pilot-deep-agents)
 - [`jyje/pilot-deepagents-rubrics`](https://github.com/jyje/pilot-deepagents-rubrics)
