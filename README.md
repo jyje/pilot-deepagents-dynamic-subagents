@@ -20,7 +20,7 @@ The repository now includes a Copilot setup workflow:
 
 - `.github/workflows/copilot-setup-steps.yml`
 
-This workflow provides a minimal, deterministic initialization path for cloud-agent sessions.
+This workflow provides a minimal, deterministic initialization path for cloud-agent sessions by checking out the repository and verifying baseline toolchain availability.
 
 ## Agent Skill Reference
 

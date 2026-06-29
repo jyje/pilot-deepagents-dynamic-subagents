@@ -18,3 +18,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+      - name: Verify baseline toolchain
+        run: |
+          git --version
+          python3 --version
