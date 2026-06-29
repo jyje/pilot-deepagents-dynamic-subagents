@@ -22,6 +22,19 @@ The repository now includes a Copilot setup workflow:
 
 This workflow provides a minimal, deterministic initialization path for cloud-agent sessions by checking out the repository and verifying baseline toolchain availability.
 
+## Cross-Pilot Initialization References
+
+The initialization direction for this pilot is aligned with the following reference projects:
+
+- `jyje/pilot-deep-agents` — baseline project structure and practical setup-first workflow orientation.
+- `jyje/pilot-deepagents-rubrics` — validation-oriented documentation structure for DeepAgents experiments.
+
+Applied to this repository:
+
+1. Keep validation goals explicit and project-scoped.
+2. Keep repository-facing materials in English.
+3. Keep cloud-agent initialization deterministic through `copilot-setup-steps.yml`.
+
 ## Agent Skill Reference
 
 This repository setup aligns with the GitHub Copilot cloud-agent customization guidance (Copilot setup steps workflow), which is the recommended skill path for environment initialization.
