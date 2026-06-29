@@ -43,6 +43,38 @@ Current baseline setup:
 1. Checkout repository source.
 2. Verify baseline toolchain availability (`git`, `python3`).
 
+## Base Implementation (Applied)
+
+Following the baseline style from `pilot-deepagents-rubrics`, this repository now includes a runnable Dynamic Subagents implementation under `/src`:
+
+- `src/main.py` — CLI demo run with an orchestrator + two subagents (`researcher`, `reviewer`)
+- `src/graph.py` — module-level `agent` export for LangGraph Studio
+- `src/doctor.py` — environment and API connectivity diagnostic checks
+- `src/pyproject.toml` — pinned pilot dependencies
+- `src/.env.sample` — required/optional runtime environment variables
+- `src/langgraph.json` — LangGraph Studio graph mapping
+
+## Quick Start
+
+```bash
+cd src
+cp .env.sample .env
+# Fill ANTHROPIC_API_KEY in .env
+
+# Install dependencies
+uv sync
+
+# Validate setup
+uv run python doctor.py
+
+# Run pilot demo
+uv run python main.py
+
+# LangGraph Studio (optional)
+uv sync --extra studio
+uv run langgraph dev --tunnel
+```
+
 ## Reference Projects
 
 - [`jyje/pilot-deep-agents`](https://github.com/jyje/pilot-deep-agents) — baseline Deep Agents pilot structure used as the setup and repository organization reference.

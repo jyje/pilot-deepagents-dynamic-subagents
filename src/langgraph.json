@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "dynamic_subagents": "./graph.py:agent"
+  },
+  "env": ".env"
+}
