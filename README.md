@@ -2,8 +2,8 @@
 
 # jyje/pilot-deepagents-dynamic-subagents
 
-<img width="280" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-light.svg#gh-light-mode-only" alt="DeepAgents"/>
-<img width="280" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-dark.svg#gh-dark-mode-only" alt="DeepAgents"/>
+<img width="280" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-light.svg#gh-light-mode-only" alt="DeepAgents logo (light mode)"/>
+<img width="280" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-dark.svg#gh-dark-mode-only" alt="DeepAgents logo (dark mode)"/>
 
 🚀 Pilot project for validating **Dynamic Subagents** in LangChain Deep Agents
 
@@ -56,8 +56,8 @@ This README formatting intentionally follows the style direction used in the use
 
 Reference projects:
 
-- `jyje/pilot-deep-agents`
-- `jyje/pilot-deepagents-rubrics`
+- [`jyje/pilot-deep-agents`](https://github.com/jyje/pilot-deep-agents)
+- [`jyje/pilot-deepagents-rubrics`](https://github.com/jyje/pilot-deepagents-rubrics)
 
 ## Agent Skill Reference
 
