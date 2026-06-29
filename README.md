@@ -45,9 +45,9 @@ Current baseline setup:
 
 ## Reference Projects
 
-- [`jyje/pilot-deep-agents`](https://github.com/jyje/pilot-deep-agents)
-- [`jyje/pilot-deepagents-rubrics`](https://github.com/jyje/pilot-deepagents-rubrics)
+- [`jyje/pilot-deep-agents`](https://github.com/jyje/pilot-deep-agents) — baseline Deep Agents pilot structure used as the setup and repository organization reference.
+- [`jyje/pilot-deepagents-rubrics`](https://github.com/jyje/pilot-deepagents-rubrics) — style and validation-documentation reference for presenting experiment intent and outcomes.
 
-## Agent Skill Reference
+## Environment Setup Reference
 
 Environment initialization follows GitHub Copilot cloud-agent customization guidance through `copilot-setup-steps.yml`.
