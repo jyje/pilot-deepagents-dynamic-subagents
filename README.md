@@ -1,40 +1,64 @@
-# pilot-deepagents-dynamic-subagents
+<div align="center">
 
-## Purpose
+# jyje/pilot-deepagents-dynamic-subagents
 
-This repository validates the Dynamic Subagents concept introduced in:
+<img width="280" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-light.svg#gh-light-mode-only" alt="DeepAgents"/>
+<img width="280" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-dark.svg#gh-dark-mode-only" alt="DeepAgents"/>
 
-- https://www.langchain.com/blog/introducing-dynamic-subagents-in-deep-agents
+🚀 Pilot project for validating **Dynamic Subagents** in LangChain Deep Agents
 
-## Validation Scope
+[![GitHub Repo stars](https://img.shields.io/github/stars/jyje/pilot-deepagents-dynamic-subagents?style=social)](https://github.com/jyje/pilot-deepagents-dynamic-subagents)
 
-This pilot focuses on:
+[English](README.md)
 
-1. Defining a clear validation target for Dynamic Subagents behavior.
-2. Keeping all project materials and documentation in English.
-3. Providing a baseline Copilot cloud-agent setup workflow for consistent initialization.
+---
+
+**Found this useful? Please give it a ⭐ — it helps others find it.**
+
+</div>
+
+## Overview
+
+This repository is a focused validation pilot for the Dynamic Subagents concept introduced in LangChain:
+
+- [Introducing Dynamic Subagents in Deep Agents](https://www.langchain.com/blog/introducing-dynamic-subagents-in-deep-agents)
+
+The goal is to structure, run, and document a practical verification path for dynamic delegation behavior in Deep Agents.
+
+## Validation Focus
+
+This pilot validates whether Dynamic Subagents can be used in a clear and repeatable way for:
+
+1. Dynamic task delegation from a primary agent to specialized subagents.
+2. Observable and explainable subagent execution behavior.
+3. Practical criteria for deciding when dynamic subagents improve workflow quality.
 
 ## Initialization Baseline
 
-The repository now includes a Copilot setup workflow:
+This repository uses:
 
 - `.github/workflows/copilot-setup-steps.yml`
 
-This workflow provides a minimal, deterministic initialization path for cloud-agent sessions by checking out the repository and verifying baseline toolchain availability.
+for deterministic cloud-agent initialization.
 
-## Cross-Pilot Initialization References
+Current baseline setup:
 
-The initialization direction for this pilot is aligned with the following reference projects:
+1. Checkout repository source.
+2. Verify baseline toolchain availability (`git`, `python3`).
 
-- `jyje/pilot-deep-agents` — baseline project structure and practical setup-first workflow orientation.
-- `jyje/pilot-deepagents-rubrics` — validation-oriented documentation structure for DeepAgents experiments.
+## Formatting and Reference Alignment
 
-Applied to this repository:
+This README formatting intentionally follows the style direction used in the user's related pilot repositories, including:
 
-1. Keep validation goals explicit and project-scoped.
-2. Keep repository-facing materials in English.
-3. Keep cloud-agent initialization deterministic through `copilot-setup-steps.yml`.
+- centered project header layout
+- image-first presentation style
+- concise top summary section
+
+Reference projects:
+
+- `jyje/pilot-deep-agents`
+- `jyje/pilot-deepagents-rubrics`
 
 ## Agent Skill Reference
 
-This repository setup aligns with the GitHub Copilot cloud-agent customization guidance (Copilot setup steps workflow), which is the recommended skill path for environment initialization.
+Environment initialization follows GitHub Copilot cloud-agent customization guidance through `copilot-setup-steps.yml`.
