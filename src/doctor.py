@@ -31,15 +31,15 @@ section("1. Environment Variables")
 
 api_key = os.getenv("ANTHROPIC_API_KEY", "")
 base_url = os.getenv("ANTHROPIC_BASE_URL", "")
-main_model = os.getenv("MAIN_MODEL", "claude-sonnet-4-5")
-researcher_model = os.getenv("RESEARCHER_MODEL", "claude-haiku-4-5")
-reviewer_model = os.getenv("REVIEWER_MODEL", "claude-haiku-4-5")
+main_model = os.getenv("MAIN_MODEL", "claude-sonnet-4-6")
+researcher_model = os.getenv("RESEARCHER_MODEL", "claude-haiku-4-5-20251001")
+reviewer_model = os.getenv("REVIEWER_MODEL", "claude-haiku-4-5-20251001")
 
 env_ok = True
 env_ok &= check(
     "ANTHROPIC_API_KEY is set",
     bool(api_key) and not api_key.startswith("sk-ant-xxx"),
-    f"value: {api_key[:16]}..." if api_key else "not set",
+    "set" if api_key else "not set",
 )
 check(
     "ANTHROPIC_BASE_URL",
