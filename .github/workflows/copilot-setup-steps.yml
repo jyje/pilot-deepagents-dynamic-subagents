@@ -5,9 +5,21 @@ on:
   push:
     paths:
       - .github/workflows/copilot-setup-steps.yml
+      - pyproject.toml
+      - uv.lock
+      - requirements*.txt
+      - package.json
+      - package-lock.json
+      - README.md
   pull_request:
     paths:
       - .github/workflows/copilot-setup-steps.yml
+      - pyproject.toml
+      - uv.lock
+      - requirements*.txt
+      - package.json
+      - package-lock.json
+      - README.md
 
 jobs:
   copilot-setup-steps:

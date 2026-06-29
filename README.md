@@ -2,14 +2,11 @@
 
 # jyje/pilot-deepagents-dynamic-subagents
 
-<img width="280" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-light.svg#gh-light-mode-only" alt="DeepAgents logo (light mode)"/>
-<img width="280" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-dark.svg#gh-dark-mode-only" alt="DeepAgents logo (dark mode)"/>
+<img width="320" src="https://raw.githubusercontent.com/langchain-ai/deepagentsjs/refs/heads/main/.github/images/logo-light.svg" alt="DeepAgents logo"/>
 
 🚀 Pilot project for validating **Dynamic Subagents** in LangChain Deep Agents
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/jyje/pilot-deepagents-dynamic-subagents?style=social)](https://github.com/jyje/pilot-deepagents-dynamic-subagents)
-
-[English](README.md)
 
 ---
 
