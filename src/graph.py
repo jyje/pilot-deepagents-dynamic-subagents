@@ -3,7 +3,7 @@
 import os
 import warnings
 from dotenv import load_dotenv
-from langchain_anthropic import ChatAnthropic
+from langchain_nvidia_ai_endpoints import ChatNVIDIA
 from langchain_core._api import LangChainBetaWarning
 from deepagents import create_deep_agent
 
@@ -11,38 +11,54 @@ warnings.filterwarnings("ignore", category=LangChainBetaWarning)
 load_dotenv()
 
 
-def _make_model(env_key: str, default: str) -> ChatAnthropic:
+def _make_model(env_key: str, default: str) -> ChatNVIDIA:
     kwargs: dict = {
         "model": os.getenv(env_key, default),
-        "anthropic_api_key": os.getenv("ANTHROPIC_API_KEY"),
         "max_retries": 4,
     }
-    if base_url := os.getenv("ANTHROPIC_BASE_URL"):
+    if api_key := os.getenv("NVIDIA_API_KEY"):
+        kwargs["api_key"] = api_key
+    if base_url := os.getenv("NVIDIA_BASE_URL"):
         kwargs["base_url"] = base_url
-    return ChatAnthropic(**kwargs)
+    return ChatNVIDIA(**kwargs)
 
 
 researcher_subagent = {
     "name": "researcher",
-    "description": "Researches background facts and returns concise findings.",
-    "system_prompt": "You gather facts quickly and provide short evidence-based notes.",
-    "model": _make_model("RESEARCHER_MODEL", "claude-haiku-4-5-20251001"),
+    "description": (
+        "Researches background facts and returns concise, evidence-based findings. "
+        "Use for knowledge-intensive information gathering."
+    ),
+    "system_prompt": (
+        "You gather facts quickly and provide short, structured notes. "
+        "Focus on accuracy; cite reasoning where possible."
+    ),
+    "model": _make_model("RESEARCHER_MODEL", "nvidia/nemotron-3-super-120b-a12b"),
     "tools": [],
 }
 
 reviewer_subagent = {
     "name": "reviewer",
-    "description": "Reviews outputs for correctness and missing assumptions.",
-    "system_prompt": "You critique drafts and identify logical gaps clearly.",
-    "model": _make_model("REVIEWER_MODEL", "claude-haiku-4-5-20251001"),
+    "description": (
+        "Reviews outputs for correctness, missing assumptions, and logical gaps. "
+        "Use to validate or critique a draft before final delivery."
+    ),
+    "system_prompt": (
+        "You critique drafts and identify logical gaps clearly. "
+        "Be specific: quote the exact passage and explain the issue."
+    ),
+    "model": _make_model("REVIEWER_MODEL", "meta/llama-3.1-8b-instruct"),
     "tools": [],
 }
 
 agent = create_deep_agent(
-    model=_make_model("MAIN_MODEL", "claude-sonnet-4-6"),
+    model=_make_model("MAIN_MODEL", "meta/llama-3.3-70b-instruct"),
     system_prompt=(
-        "You are an orchestrator. Use subagents when decomposition improves quality. "
-        "Delegate fact-finding to researcher and validation to reviewer."
+        "You are an orchestrator agent. "
+        "Break complex requests into subtasks and delegate to specialized subagents. "
+        "Always delegate fact-finding to the researcher subagent, "
+        "then pass the draft to the reviewer subagent for validation "
+        "before returning a consolidated final answer."
     ),
     subagents=[researcher_subagent, reviewer_subagent],
 )
