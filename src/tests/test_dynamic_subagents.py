@@ -27,9 +27,19 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 # ── helpers ───────────────────────────────────────────────────────────────────
 
 def _make_fake_nvidia_model(model_id: str = "fake/model") -> MagicMock:
-    """Return a MagicMock that mimics a ChatNVIDIA instance."""
-    mock = MagicMock()
+    """Return a MagicMock that mimics a ChatNVIDIA instance.
+
+    `spec=ChatNVIDIA` makes the mock pass `isinstance(model, BaseChatModel)`
+    checks inside `deepagents.resolve_model`, so it is used as-is instead of
+    being mistaken for a model spec string.
+    """
+    from langchain_nvidia_ai_endpoints import ChatNVIDIA
+
+    mock = MagicMock(spec=ChatNVIDIA)
     mock.model = model_id
+    # `BaseChatModel.profile` is consulted by deepagents' summarization
+    # middleware; pydantic fields are not always visible to `spec=`, so set it.
+    mock.profile = None
     # .bind_tools() must return self so deepagents can chain calls
     mock.bind_tools.return_value = mock
     mock.with_config.return_value = mock

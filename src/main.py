@@ -13,7 +13,6 @@ load_dotenv()
 def _make_model(env_key: str, default: str) -> ChatNVIDIA:
     kwargs: dict = {
         "model": os.getenv(env_key, default),
-        "max_retries": 4,
     }
     if api_key := os.getenv("NVIDIA_API_KEY"):
         kwargs["api_key"] = api_key
