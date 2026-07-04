@@ -51,7 +51,7 @@ env_ok = True
 env_ok &= check(
     "NVIDIA_API_KEY is set",
     bool(api_key) and not api_key.startswith("nvapi-xxx"),
-    f"value: {api_key[:16]}..." if api_key else "not set",
+    "value: nvapi-****" if api_key else "not set",
 )
 
 endpoint = base_url or "https://integrate.api.nvidia.com/v1 (default)"
@@ -65,7 +65,7 @@ env_ok &= check("REVIEWER_MODEL",   True, f"value: {reviewer_model}")
 ls_key_ok = bool(ls_api_key) and not ls_api_key.startswith("lsv2_pt_xxx")
 check("LANGSMITH_API_KEY is set (optional)",
       ls_key_ok,
-      f"value: {ls_api_key[:16]}..." if ls_key_ok else "not set — Studio traces disabled")
+      "value: lsv2_****" if ls_key_ok else "not set — Studio traces disabled")
 check("LANGSMITH_TRACING (optional)",
       ls_tracing.lower() == "true",
       f"value: {ls_tracing!r}" if ls_tracing else "not set")
